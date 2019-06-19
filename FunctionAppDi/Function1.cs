@@ -15,9 +15,9 @@ namespace FunctionAppDi
         private readonly ILogger _log;
         private readonly IGuidService _guidService;
 
-        public Function1(ILoggerFactory logFactory, IGuidService guidService)
+        public Function1(ILogger<Function1> log, IGuidService guidService)
         {
-            _log = logFactory.CreateLogger<Function1>();
+            _log = log;
             _guidService = guidService;
         }
 

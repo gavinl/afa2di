@@ -6,10 +6,9 @@ namespace Di.Lib.Service
     public class GuidService : IGuidService
     {
         private readonly ILogger _log;
-        public GuidService(ILoggerFactory logFactory)
+        public GuidService(ILogger<GuidService> log)
         {
-            if (logFactory == null) throw new ArgumentNullException(nameof(logFactory));
-            _log = logFactory.CreateLogger<GuidService>();
+            _log = log;
             _log.LogTrace("Trace: GuidService created");
         }
 
